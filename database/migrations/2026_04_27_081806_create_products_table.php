@@ -18,7 +18,7 @@ return new class extends Migration
             $table->mediumText('description')->nullable();
             $table->integer('count')->nullable();
             $table->float('price')->nullable();
-            $table->float('status')->nullable();
+            $table->string('status')->nullable();
             $table->timestamps();
         });
     }

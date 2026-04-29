@@ -3,7 +3,7 @@
 namespace Database\Factories;
 
 use App\Enums\ProductStatus;
-use Carbon\Factory;
+use Illuminate\Database\Eloquent\Factories\Factory;
 
 class ProductFactory extends Factory
 {

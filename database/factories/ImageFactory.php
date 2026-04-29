@@ -2,8 +2,7 @@
 
 namespace Database\Factories;
 
-use Faker\Factory;
-
+use Illuminate\Database\Eloquent\Factories\Factory;
 class ImageFactory extends Factory
 {
     public function definition():array{

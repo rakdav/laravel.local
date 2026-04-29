@@ -11,7 +11,7 @@ class Review extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'text',
+        'title',
         'rating'
     ];
     protected $casts = ['rating' => 'int'];

@@ -3,14 +3,14 @@
 namespace Database\Factories;
 
 use App\Models\Review;
-use Faker\Factory;
+use Illuminate\Database\Eloquent\Factories\Factory;
 
 class ReviewFactory extends Factory
 {
-    protected function definition():array
+    public function definition():array
     {
         return [
-            'text'=>fake()->text(100),
+            'title'=>fake()->text(100),
             'rating'=>fake()->numberBetween(1,5),
         ];
     }
