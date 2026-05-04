@@ -28,6 +28,7 @@ use Illuminate\Support\Carbon;
  * @property-read Collection<int, Review> $reviews
  * @property-read int|null $reviews_count
  * @property-read User|null $user
+ * @property int|null $product_id
  *
  * @method static ProductFactory factory($count = null, $state = [])
  * @method static Builder|Product newModelQuery()
@@ -42,6 +43,7 @@ use Illuminate\Support\Carbon;
  * @method static Builder|Product whereStatus($value)
  * @method static Builder|Product whereUpdatedAt($value)
  * @method static Builder|Product whereUserId($value)
+ * @method static Builder|Review whereProductId($value)
  */
 class Product extends Model
 {
