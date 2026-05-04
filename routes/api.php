@@ -8,3 +8,4 @@ Route::controller(ProductController::class)->
         Route::get('', 'index')->name('products.index') ;
         Route::get('{product}', 'show')->name('products.show') ;
 });
+
