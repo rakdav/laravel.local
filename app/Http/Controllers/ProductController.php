@@ -6,18 +6,7 @@ use App\Enums\ProductStatus;
 use App\Models\Image;
 use App\Models\Product;
 use App\Models\Review;
-use Illuminate\Support\Carbon;
 
-/**
- * App\Models\ProductImage
- *
- * @property int $id
- * @property int|null $product_id
- * @property string|null $path
- * @property Carbon|null $created_at
- * @property Carbon|null $updated_at
- * @property-read Product|null $product
- */
 class ProductController extends Controller
 {
     public function index(){
