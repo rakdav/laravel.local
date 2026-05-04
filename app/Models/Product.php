@@ -45,7 +45,6 @@ use Illuminate\Support\Carbon;
  * @method static Builder|Product whereUserId($value)
  * @method static Builder|Review whereProductId($value)
  *
- * @mixin \Eloquent
  */
 class Product extends Model
 {
