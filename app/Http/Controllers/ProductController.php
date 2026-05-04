@@ -6,9 +6,30 @@ use App\Enums\ProductStatus;
 use App\Models\Image;
 use App\Models\Product;
 use App\Models\Review;
+use Illuminate\Support\Carbon;
 
+/**
+ * App\Models\ProductImage
+ *
+ * @property int $id
+ * @property int|null $product_id
+ * @property string|null $path
+ * @property Carbon|null $created_at
+ * @property Carbon|null $updated_at
+ * @property-read Product|null $product
+ */
 class ProductController extends Controller
 {
+    public function index(){
+        $products = Product::query()->select(['id','name','price'])->
+        whereStatus(ProductStatus::Published)->get();
+        return $products->map(fn(Product $product)=>[
+            'id'=>$product->id,
+            'name' => $product->name,
+            'price' => $product->price,
+            'rating' => $product->rating(),
+        ]);
+    }
     public function show(Product $product)
     {
         if ($product->status == ProductStatus::Draft) {
@@ -26,10 +47,9 @@ class ProductController extends Controller
             'reviews' => $product->reviews->map(fn (Review $review) => [
                 'id' => $review->id,
                 'userName' => $review->user->name,
-                'text' => $review->title,
+                'title' => $review->title,
                 'rating' => $review->rating,
             ]),
         ];
     }
-
 }
